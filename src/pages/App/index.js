@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Home from '../home'
 import Login from '../login/login'
+import userInfo from '../../userConfig/userinfo'
 
 class App extends Component {
   render() {
+    let {isLogin} = userInfo
     return (
       <div className="App">
-        <div>
-          <Home></Home>
-          <Login></Login>
-        </div>
+        {isLogin() ? <Home/> : <Login/>}
       </div>
     );
   }

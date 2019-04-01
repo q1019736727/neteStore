@@ -2,6 +2,7 @@
   "name": "nete-st",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://202.96.155.121:8888",
   "dependencies": {
     "@babel/core": "7.2.2",
     "@babel/plugin-proposal-decorators": "^7.4.0",
