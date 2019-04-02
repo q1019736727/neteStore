@@ -17,13 +17,47 @@
       flex-direction: column;
       align-items: center;
       margin-top: 100px;
-      &:nth-child(1){
-        width: 80%;
+      input{
+        &:nth-child(1),&:nth-child(2){
+          width: 80%;
+          font-size: 20px;
+          display: inline-block;
+          border: none;
+          &::after{
+            content: '';
+            display: block;
+            height: 1px;
+            background-color: #cccccc;
+            -webkit-transform: scaleY(.5);
+            transform:scaleY(.5);
+          }
+          &:focus{
+            outline: none;
+          }
+        }
+        &:nth-child(1){
+          
+        }
+        &:nth-child(2){
+          margin-top: 40px;
+        }
+
       }
-      &:nth-child(3){
+      button{
+        margin-top: 60px;
         display: inline-block;
-        background: #000;
+        background: #4f90f9;
+        color: white;
+        vertical-align: top;
+        width: 80%;
+        height: 40px;
+        border: none;
+        font-size: 16px;
+        &:focus{
+          outline: none;
+        }
       }
+
     }
   }
 }

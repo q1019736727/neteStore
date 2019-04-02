@@ -8,7 +8,7 @@ class Login extends Component{
     let elements = ele.currentTarget.elements
     http.login({mobile:elements[0].value,password:elements[1].value})
       .then(data => {
-
+        window.localStorage.setItem('token',data.data.sessionKey)
       })
   }
   render() {
@@ -21,7 +21,7 @@ class Login extends Component{
           <form onSubmit={this.loginAction} className={'formWrapper'}>
             <input type="username" defaultValue={15323807318} placeholder={'用户名'}/>
             <input type="password" defaultValue={123456} placeholder={'密码'}/>
-            <input type="submit" value={'登录'}/>
+            <button type='submit'>登录</button>
           </form>
         </div>
       </div>
