@@ -21,7 +21,7 @@ class Login extends Component{
           <form onSubmit={this.loginAction} className={'formWrapper'}>
             <input type="username" defaultValue={15323807318} placeholder={'用户名'}/>
             <input type="password" defaultValue={123456} placeholder={'密码'}/>
-            <input type="submit"/>
+            <input type="submit" value={'登录'}/>
           </form>
         </div>
       </div>
