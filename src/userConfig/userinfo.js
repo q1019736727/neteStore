@@ -1,10 +1,7 @@
-const userKey = 'USER_INFO'
+const userKey = 'token'
 const userInfo  = {
   isLogin:function(){
-    return window.sessionStorage.getItem(userKey)
-  },
-  setLogin:function(value){
-    window.sessionStorage.setItem(userKey,value)
+    return window.localStorage.getItem(userKey)
   }
 }
 
