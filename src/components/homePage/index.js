@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
-import { Carousel, WingBlank } from 'antd-mobile';
+import { Carousel} from 'antd-mobile';
+// import 'antd-mobile/lib/carousel/style'
 
 class HomePage extends Component{
   state = {
@@ -7,17 +8,11 @@ class HomePage extends Component{
     imgHeight: 176,
   }
   componentDidMount() {
-    // simulate img loading
-    setTimeout(() => {
-      this.setState({
-        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
-      });
-    }, 100);
+
   }
   render() {
     return (
       <div>
-        <WingBlank>
           <Carousel
             autoplay={true}
             infinite
@@ -32,7 +27,7 @@ class HomePage extends Component{
                 style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
               >
                 <img
-                  src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+                  src={`http://yanxuan.nosdn.127.net/65091eebc48899298171c2eb6696fe27.jpg`}
                   alt=""
                   style={{ width: '100%', verticalAlign: 'top' }}
                   onLoad={() => {
@@ -44,7 +39,6 @@ class HomePage extends Component{
               </a>
             ))}
           </Carousel>
-        </WingBlank>
       </div>
     );
   }
