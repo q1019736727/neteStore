@@ -20,12 +20,23 @@ const request = {
     })
   },
   get(params,url){
-    instance.get(url,{...params,headers:getNewHeaders()})
+    return new Promise((resolve, reject) => {
+      instance.get(url,{...params,headers:getNewHeaders()})
+        .then(data => {
+          resolve(data.data)
+        }).catch(error => {
+        console.log(error)
+        reject(JSON.stringify(error))
+      })
+    })
   }
 }
 const http = {
   login:function(params) {
     return request.post(params,api.loginUrl)
+  },
+  homeData:function() {
+    return request.get({},'/')
   }
 }
 export default http

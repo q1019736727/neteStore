@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import { Carousel} from 'antd-mobile';
-import HomeMenu from '../homeMenu'
+import HomeMenu from './homeMenu'
+import http from '../../netRequest/http'
 // import 'antd-mobile/lib/carousel/style'
 
 class HomePage extends Component{
@@ -14,6 +15,11 @@ class HomePage extends Component{
   }
   componentDidMount() {
 
+  }
+  componentWillMount(){
+    http.homeData().then(data=>{
+      console.log(data)
+    })
   }
   render() {
     return (
@@ -45,6 +51,7 @@ class HomePage extends Component{
           ))}
         </Carousel>
         <HomeMenu></HomeMenu>
+
       </div>
     );
   }
