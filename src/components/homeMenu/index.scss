@@ -1,0 +1,17 @@
+#homemenuWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .menuItem{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 300;
+    >img{
+      width: 30px;
+    }
+
+  }
+}
