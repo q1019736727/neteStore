@@ -11,13 +11,14 @@ class HomePage extends Component{
                 'https://yanxuan.nosdn.127.net/d329bc67383ffbbd9e66e8c96a8777b6.jpg',
                 'https://yanxuan.nosdn.127.net/a7432d3886dd81931a320c59025a2727.jpg',
                 'https://yanxuan.nosdn.127.net/ed9deac1390ddb2bf59dd788dc582572.jpg'
-    ]
+    ],
+
   }
   componentDidMount() {
 
   }
   componentWillMount(){
-    http.homeData().then(data=>{
+    http.homeData().then(data => {
       console.log(data)
     })
   }
@@ -27,8 +28,6 @@ class HomePage extends Component{
         <Carousel
           autoplay={true}
           infinite
-          beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-          afterChange={index => console.log('slide to', index)}
           dotStyle={{backgroundColor:'white'}}
           dotActiveStyle={{backgroundColor:'#b22d30'}}
         >
