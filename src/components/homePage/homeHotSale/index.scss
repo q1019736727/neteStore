@@ -1,0 +1,60 @@
+.hotSale{
+  h4{
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+  }
+}
+#homeHotSaleWrapper{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  width: 100vw;
+  padding-bottom: 20px;
+}
+#homeHotSaleWrapper>.item{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  &::before{
+    content: '';
+    display: block;
+    left: 15px;
+    top: 0;
+    height: 1px;
+    background: #ccc;
+    -webkit-transform: scaleY(.5);
+    transform:scaleY(.5);
+    width: calc(100% - 30px);
+    position: absolute;
+
+  }
+  img{
+    width: 140px;
+  }
+  >.goodsInfo{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    >.goodsInfo-title{
+      line-height: 30px;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: "PingFang SC";
+    }
+    >.goodsInfo-des{
+      color: #a9a9a9;
+      line-height: 20px;
+      font-size: 13px;
+    }
+    >.goodsInfo-price{
+      color: #8b0000;
+      line-height: 25px;
+      font-size: 14px;
+    }
+  }
+}

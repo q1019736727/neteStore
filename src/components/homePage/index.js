@@ -1,6 +1,9 @@
 import React,{Component} from 'react'
 import { Carousel} from 'antd-mobile';
 import HomeMenu from './homeMenu'
+import HomeBrand from './homeBrand'
+import HomeNewGoods from './homeNewgoods'
+import HomeHotSale from './homeHotSale'
 import http from '../../netRequest/http'
 // import 'antd-mobile/lib/carousel/style'
 
@@ -12,14 +15,20 @@ class HomePage extends Component{
                 'https://yanxuan.nosdn.127.net/a7432d3886dd81931a320c59025a2727.jpg',
                 'https://yanxuan.nosdn.127.net/ed9deac1390ddb2bf59dd788dc582572.jpg'
     ],
-
+    brandList:[],
+    newGoodsList:[],
+    hotGoodsList:[]
   }
   componentDidMount() {
 
   }
   componentWillMount(){
     http.homeData().then(data => {
-      console.log(data)
+      this.setState({
+        ...data.data
+      })
+    }).then(()=>{
+      console.log(this.state);
     })
   }
   render() {
@@ -50,7 +59,9 @@ class HomePage extends Component{
           ))}
         </Carousel>
         <HomeMenu></HomeMenu>
-
+        <HomeBrand {...this.state}></HomeBrand>
+        <HomeNewGoods {...this.state}></HomeNewGoods>
+        <HomeHotSale {...this.state}></HomeHotSale>
       </div>
     );
   }

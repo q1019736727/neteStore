@@ -1,0 +1,39 @@
+.brand>h4{
+  width: 100%;
+  text-align: center;
+  padding: 18px 0;
+}
+#brandWrapper{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+.brandItem{
+  position: relative;
+  width: 50%;
+  height: calc(50vw * 0.56);
+  img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(50vw * 0.56);
+  }
+  .brandItem-title{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .brandItem-des{
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    font-size: 13px;
+    color: #a9a9a9;
+  }
+
+}

@@ -1,0 +1,32 @@
+.homenewgoods>h4{
+  width: 100%;
+  text-align: center;
+  padding: 18px 0;
+}
+#homeNewGoodsWrapper{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-bottom: 20px;
+}
+#homeNewGoodsWrapper>.newgoodsItem{
+  width: 50%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  img{
+    width: 80%;
+  }
+  >.goodTitle{
+
+  }
+  >.goodPrice{
+    margin-top: 10px;
+    color: #8b0000;
+  }
+
+}
