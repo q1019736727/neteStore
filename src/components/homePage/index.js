@@ -4,6 +4,8 @@ import HomeMenu from './homeMenu'
 import HomeBrand from './homeBrand'
 import HomeNewGoods from './homeNewgoods'
 import HomeHotSale from './homeHotSale'
+import HomeTopic from './homeTopic'
+import HomeCategory from './homeCategory'
 import http from '../../netRequest/http'
 // import 'antd-mobile/lib/carousel/style'
 
@@ -17,7 +19,9 @@ class HomePage extends Component{
     ],
     brandList:[],
     newGoodsList:[],
-    hotGoodsList:[]
+    hotGoodsList:[],
+    topicList:[],
+    categoryList:[]
   }
   componentDidMount() {
 
@@ -62,6 +66,12 @@ class HomePage extends Component{
         <HomeBrand {...this.state}></HomeBrand>
         <HomeNewGoods {...this.state}></HomeNewGoods>
         <HomeHotSale {...this.state}></HomeHotSale>
+        <HomeTopic {...this.state}></HomeTopic>
+        {
+          this.state.categoryList.map((item)=>(
+            <HomeCategory key={item.id} name={item.name} goodsList={item.goodsList}></HomeCategory>
+          ))
+        }
       </div>
     );
   }

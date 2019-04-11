@@ -15,9 +15,9 @@ class Home extends Component{
             <div>
               <Route exact path='/' component={Homepage}></Route>
             </div>
+            <Tabber tabBarClick={(index)=>{this.tabrclick(index)}}></Tabber>
           </HashRouter>
         </div>
-        <Tabber tabBarClick={(index)=>{this.tabrclick(index)}}></Tabber>
       </div>
     );
   }
