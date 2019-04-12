@@ -1,17 +1,39 @@
-import React, { Component } from 'react';
-import Home from '../home'
-import Login from '../login/login'
+import React, { Component ,Fragment} from 'react';
 import userInfo from '../../userConfig/userinfo'
+import {HashRouter,Route,Redirect,Switch} from 'react-router-dom'
+import Tabber from '../../components/Tabbar'
+import Login from '../login/login'
+import Home from '../home'
+import Topic from '../topic'
+import Category from '../category'
+import Cart from '../cart'
+import Mine from '../mine'
 
 class App extends Component {
   render() {
     let {isLogin} = userInfo
     return (
       <div className="App">
-        {isLogin() ? <Home/> : <Login/>}
+        <HashRouter>
+          {
+            <Fragment>
+              <Switch>
+                {isLogin() ?  <Redirect exact path='/' to='/home'></Redirect> : <Redirect exact path='/' to='/login'></Redirect>}
+                <Route path="/home" component={Home}></Route>
+                <Route path='/login' component={Login}></Route>
+                <Route path='/topic' component={Topic}></Route>
+                <Route path='/category' component={Category}></Route>
+                <Route path='/cart' component={Cart}></Route>
+                <Route path='/mine' component={Mine}></Route>
+              </Switch>
+              <Route component={Tabber}></Route>
+            </Fragment>
+          }
+        </HashRouter>
       </div>
     );
   }
 }
+
 
 export default App;
