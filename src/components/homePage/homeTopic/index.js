@@ -6,7 +6,7 @@ class Topic extends Component {
   state = {}
 
   componentDidMount() {
-    // simulate img loading
+    // simulate img dialog
     setTimeout(() => {
       this.setState({
         data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],

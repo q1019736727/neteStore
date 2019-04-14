@@ -7,6 +7,7 @@ import HomeHotSale from './homeHotSale'
 import HomeTopic from './homeTopic'
 import HomeCategory from './homeCategory'
 import http from '../../netRequest/http'
+import Dialog from '../dialog'
 // import 'antd-mobile/lib/carousel/style'
 
 class HomePage extends Component{
@@ -23,14 +24,13 @@ class HomePage extends Component{
     topicList:[],
     categoryList:[]
   }
-  componentDidMount() {
-
-  }
   componentWillMount(){
+    Dialog.show()
     http.homeData().then(data => {
       this.setState({
         ...data.data
       })
+      Dialog.dismiss()
     }).then(()=>{
       console.log(this.state);
     })
