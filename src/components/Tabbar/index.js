@@ -5,7 +5,7 @@ import '../../icon-font/iconfont.css'
 
 class Tabber extends Component {
   state = {
-    tabberNameIcons: [{name: '首页', icon: 'icon-home', active: false},
+    tabberNameIcons: [{name: '首页', icon: 'icon-home', active: true},
       {name: '专题', icon: 'icon-subject',active: false},
       {name: '分类', icon: 'icon-Category',active: false},
       {name: '购物车', icon: 'icon-cart',active: false},
@@ -17,8 +17,7 @@ class Tabber extends Component {
       '/category',
       '/cart',
       '/mine',
-    ],
-    isTab:null
+    ]
   }
   changePage(url){
     this.props.history.push({
@@ -35,30 +34,18 @@ class Tabber extends Component {
       tabberNameIcons:[...tempArr]
     })
   }
-  componentWillMount(){
+  render() {
     const { match, location, history } = this.props
     let isTab = false
-    let currentIndex = 0
-    this.state.linkUrl.forEach((url,index)=>{
+    this.state.linkUrl.forEach(url=>{
       if (location.pathname === url){
         isTab = true
-        currentIndex = index
       }
     })
-    let tempArr = this.state.tabberNameIcons
-    tempArr[currentIndex]['active'] = true
-
-    this.setState({
-      tabberNameIcons:[...tempArr],
-      isTab:isTab
-    })
-  }
-  render() {
-
     return (
       <Fragment>
         {
-          this.state.isTab ?  <div id={'tabbar'}>
+          isTab ?  <div id={'tabbar'}>
             {this.state.tabberNameIcons.map((item,index) => {
               return <Item itemClick={()=>{this.click(index)}}  {...item} key={index}/>
             })}
@@ -70,7 +57,7 @@ class Tabber extends Component {
 }
 
 function Item(props) {
-  let {name,icon,active,itemClick,currentIndex} = props
+  let {name,icon,active,itemClick} = props
   return (
     <div className={'item'} onClick={itemClick}>
       <i className={`iconfont ${icon}`} style={{color: active ? '#b22d30':''}}></i>

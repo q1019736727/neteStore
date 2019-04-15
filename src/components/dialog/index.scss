@@ -29,8 +29,11 @@
     flex-direction: column;
     >i{
       animation: circleAnimation 1s linear infinite;
-      font-size: 23px;
+      font-size: 25px;
       margin-bottom: 10px;
+    }
+    >label{
+      margin-top: 10px;
     }
   }
 }

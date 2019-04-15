@@ -8,7 +8,7 @@ import Topic from '../topic'
 import Category from '../category'
 import Cart from '../cart'
 import Mine from '../mine'
-
+import GoodsDetail from '../goodsDetail'
 class App extends Component {
   render() {
     let {isLogin} = userInfo
@@ -19,7 +19,8 @@ class App extends Component {
             <Fragment>
               <Switch>
                 {isLogin() ?  <Redirect exact path='/' to='/home'></Redirect> : <Redirect exact path='/' to='/login'></Redirect>}
-                <Route path="/home" component={Home}></Route>
+                <Route  path="/home" component={Home}></Route>
+                <Route path='/goodsdetail/:goodsid' component={GoodsDetail}></Route>
                 <Route path='/login' component={Login}></Route>
                 <Route path='/topic' component={Topic}></Route>
                 <Route path='/category' component={Category}></Route>

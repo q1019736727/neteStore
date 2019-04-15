@@ -4,6 +4,7 @@
   padding: 18px 0;
 }
 #homeNewGoodsWrapper{
+  text-decoration: none;
   display: flex;
   justify-content: start;
   align-items: start;
@@ -11,8 +12,12 @@
   width: 100vw;
   padding-bottom: 20px;
 }
-#homeNewGoodsWrapper>.newgoodsItem{
+#homeNewGoodsWrapper > a{
   width: 50%;
+}
+
+#homeNewGoodsWrapper> a > .newgoodsItem{
+  width: 100%;
   display: flex;
   justify-content: start;
   align-items: center;

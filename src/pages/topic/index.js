@@ -32,6 +32,9 @@ function Item(props) {
   return(
     <div className='topicPageItem'>
       <img src={scene_pic_url} alt=""/>
+      <label>{title}</label>
+      <label>{subtitle}</label>
+      <label>{price_info}元起</label>
     </div>
   )
 }

@@ -21,7 +21,7 @@ const request = {
   },
   get(params,url){
     return new Promise((resolve, reject) => {
-      instance.get(url,{...params,headers:getNewHeaders()})
+      instance.get(url,{params:{...params},headers:getNewHeaders()})
         .then(data => {
           resolve(data.data)
         }).catch(error => {
@@ -40,6 +40,9 @@ const http = {
   },
   topicData:function(params) {
     return request.get(params,api.topicUrl)
+  },
+  goodsDetailData:function(params) {
+    return request.get(params,api.goodsdetailUrl)
   }
 }
 export default http
