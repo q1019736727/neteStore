@@ -3,6 +3,14 @@
   justify-content: center;
   align-items: center;
 }
+@keyframes circleAnimation {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
 #dialogWrapper{
   width: 100%;
   height: 100vh;
@@ -12,10 +20,17 @@
   @include center;
   >.dialog{
     @include center;
-    width: 115px;
-    height: 115px;
+    width: 110px;
+    height: 110px;
+    margin-top: -20px;
     background: rgba(0,0,0,.6);
     color: #ededed;
     border-radius: 6px;
+    flex-direction: column;
+    >i{
+      animation: circleAnimation 1s linear infinite;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
   }
 }

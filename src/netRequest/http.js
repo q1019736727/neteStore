@@ -35,8 +35,11 @@ const http = {
   login:function(params) {
     return request.post(params,api.loginUrl)
   },
-  homeData:function() {
-    return request.get({},'/')
+  homeData:function(params) {
+    return request.get(params,api.homeUrl)
+  },
+  topicData:function(params) {
+    return request.get(params,api.topicUrl)
   }
 }
 export default http

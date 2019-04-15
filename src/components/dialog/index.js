@@ -6,6 +6,7 @@ class Loading extends Component{
     return (
       <div id='dialogWrapper'>
         <span className='dialog'>
+          <i className='iconfont icon-Loading'></i>
           <label>
             加载中...
           </label>

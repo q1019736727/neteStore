@@ -8,7 +8,6 @@ import HomeTopic from './homeTopic'
 import HomeCategory from './homeCategory'
 import http from '../../netRequest/http'
 import Dialog from '../dialog'
-// import 'antd-mobile/lib/carousel/style'
 
 class HomePage extends Component{
   state = {
@@ -32,7 +31,6 @@ class HomePage extends Component{
       })
       Dialog.dismiss()
     }).then(()=>{
-      console.log(this.state);
     })
   }
   render() {
