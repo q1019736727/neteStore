@@ -42,7 +42,12 @@ function Item(props) {
   const {item_pic_url, title, price_info, subtitle} = props.data
   return (
     <div className='topicItemWrapper'>
-      <img src={item_pic_url} alt=""/>
+      <img
+        src={item_pic_url}
+        onLoad={() => {
+          window.dispatchEvent(new Event('resize'));
+        }}
+        alt=""/>
       <div className='topicInfo'>
         <p>
           {title}

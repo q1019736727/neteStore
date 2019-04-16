@@ -1,19 +1,21 @@
 import React,{Component} from 'react'
+import {withRouter} from 'react-router-dom'
 import './index.scss'
 
 class NavigationBar extends Component{
-  goBack(){
-    let a = document.createElement('a')
-    a.href = '/'
-    a.click()
+  goBack = () => {
+    const {go} = this.props.history
+    go(-1)
   }
   render() {
     return (
       <div id='navigationBar'>
-        <i className='iconfont icon-back' onClick={this.goBack}></i>
-        {/*<label>{this.props}</label>*/}
+        <div className='navWrapper'>
+          <i className='iconfont icon-back' onClick={this.goBack}></i>
+          <label>{this.props.title}</label>
+        </div>
       </div>
     );
   }
 }
-export default NavigationBar
+export default withRouter(NavigationBar)
