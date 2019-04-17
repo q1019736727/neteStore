@@ -1,8 +1,18 @@
 import React, {Component,Fragment} from 'react'
 import {withRouter,NavLink} from 'react-router-dom'//监听路径变化
+import {connect} from 'react-redux'
 import './index.scss'
 import '../../icon-font/iconfont.css'
+import changTab from '../../redux/actions/tabbarChange'
 
+@connect(
+  state => ({
+    currentSelect:state.tabbarReducer.currentSelect
+  }),
+  {
+    changTab
+  }
+)
 class Tabber extends Component {
   state = {
     tabberNameIcons: [{name: '首页', icon: 'icon-home', active: true},
@@ -35,6 +45,7 @@ class Tabber extends Component {
     })
   }
   render() {
+    console.log(this.props.currentSelect)
     const { match, location, history } = this.props
     let isTab = false
     this.state.linkUrl.forEach(url=>{
