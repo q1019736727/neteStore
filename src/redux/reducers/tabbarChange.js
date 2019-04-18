@@ -5,12 +5,10 @@ export default function tabbarReducer(state = {
 },action) {
   switch (action.type) {
     case TABBAR_CHANGE:
-      return Object.assign(state,{
+      return Object.assign({},state,{
         currentSelect:action.payload.currentIndex
       })
-      break
     default:
       return state
-      break
   }
 }

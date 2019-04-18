@@ -15,11 +15,11 @@ import changTab from '../../redux/actions/tabbarChange'
 )
 class Tabber extends Component {
   state = {
-    tabberNameIcons: [{name: '首页', icon: 'icon-home', active: true},
-      {name: '专题', icon: 'icon-subject',active: false},
-      {name: '分类', icon: 'icon-Category',active: false},
-      {name: '购物车', icon: 'icon-cart',active: false},
-      {name: '我的', icon: 'icon-icon-test',active: false}
+    tabberNameIcons: [{name: '首页', icon: 'icon-home'},
+      {name: '专题', icon: 'icon-subject'},
+      {name: '分类', icon: 'icon-Category'},
+      {name: '购物车', icon: 'icon-cart'},
+      {name: '我的', icon: 'icon-icon-test'}
     ],
     linkUrl:[
       '/home',
@@ -36,21 +36,15 @@ class Tabber extends Component {
   }
   click = (index)=>{
     this.changePage(this.state.linkUrl[index])
-    let tempArr = this.state.tabberNameIcons.map(item=>{
-      return {...item,active:false}
-    })
-    tempArr[index]['active'] = true
-    this.setState({
-      tabberNameIcons:[...tempArr]
-    })
   }
   render() {
-    console.log(this.props.currentSelect)
     const { match, location, history } = this.props
     let isTab = false
-    this.state.linkUrl.forEach(url=>{
+    let currentIndex
+    this.state.linkUrl.forEach((url,index)=>{
       if (location.pathname === url){
         isTab = true
+        currentIndex = index
       }
     })
     return (
@@ -58,7 +52,7 @@ class Tabber extends Component {
         {
           isTab ?  <div id={'tabbar'}>
             {this.state.tabberNameIcons.map((item,index) => {
-              return <Item itemClick={()=>{this.click(index)}}  {...item} key={index}/>
+              return <Item isActive={index===currentIndex} itemClick={()=>{this.click(index)}}  {...item} key={index}/>
             })}
           </div>: null
         }
@@ -68,11 +62,11 @@ class Tabber extends Component {
 }
 
 function Item(props) {
-  let {name,icon,active,itemClick} = props
+  let {name,icon,isActive,itemClick} = props
   return (
     <div className={'item'} onClick={itemClick}>
-      <i className={`iconfont ${icon}`} style={{color: active ? '#b22d30':''}}></i>
-      <span className={active ? 'active':''}>
+      <i className={`iconfont ${icon}`} style={{color: isActive ? '#b22d30':''}}></i>
+      <span className={isActive ? 'active':''}>
         {name}
       </span>
     </div>
