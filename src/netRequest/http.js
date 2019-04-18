@@ -43,6 +43,9 @@ const http = {
   },
   goodsDetailData:function(params) {
     return request.get(params,api.goodsdetailUrl)
+  },
+  categoryListData:function (params) {
+    return request.get(params,api.categoryListUrl)
   }
 }
 export default http
