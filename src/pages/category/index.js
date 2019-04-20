@@ -10,24 +10,22 @@ class CateGory extends Component{
     this.fetchData()
   }
   state = {
-
+    categoryList:[],
   }
   fetchData(){
     Dialog.show()
     http.categoryListData().then(response=>{
       Dialog.dismiss()
       console.log(response)
+      this.setState({
+        categoryList:[...response.data.categoryList]
+      })
     })
   }
   render() {
     return (
       <div>
-        <CategoryList>
-          {
-            function haha() {
-              return '哈哈哈'
-            }
-          }
+        <CategoryList categoryList={this.state.categoryList}>
         </CategoryList>
       </div>
     );

@@ -1,0 +1,21 @@
+.categoryListWraper{
+  height: calc(100vh - 50px);
+  border-right: 1px solid #f2f2f6;
+  width: 30%;
+}
+.categoryListWraper ul #categoryLine{
+  width: 2px;
+  background: #000;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.categoryListWraper ul{
+  margin-top: 10px;
+}
+.categoryListWraper ul li{
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+}
