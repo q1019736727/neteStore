@@ -8,7 +8,6 @@ class CategoryList extends Component{
   }
   cateClick(ele){
     let line = document.getElementById('categoryLine')
-    console.log(line)
     line.style.transform = `translateY(${ele.currentTarget.getBoundingClientRect().top-12}px)`
     line.style.animation = '0.1ms liner all'
   }

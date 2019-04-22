@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import CategoryList from '../../components/categoryPage/categoryList'
+import CategoryContent from '../../components/categoryPage/categoryContent'
 import './index.scss'
 import http from '../../netRequest/http'
 import Dialog from '../../components/dialog'
@@ -11,22 +12,23 @@ class CateGory extends Component{
   }
   state = {
     categoryList:[],
+    currentCategory:{}
   }
   fetchData(){
     Dialog.show()
     http.categoryListData().then(response=>{
       Dialog.dismiss()
-      console.log(response)
       this.setState({
-        categoryList:[...response.data.categoryList]
+        categoryList:[...response.data.categoryList],
+        currentCategory:{...response.data.currentCategory}
       })
     })
   }
   render() {
     return (
-      <div>
-        <CategoryList categoryList={this.state.categoryList}>
-        </CategoryList>
+      <div className='categoryWrapper'>
+        <CategoryList categoryList={this.state.categoryList}/>
+        <CategoryContent currentCategory={this.state.currentCategory}/>
       </div>
     );
   }

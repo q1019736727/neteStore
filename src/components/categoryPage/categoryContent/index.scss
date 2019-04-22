@@ -1,0 +1,20 @@
+@import "../../../common/theme";
+.categoryContent{
+  width: 70%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+.categoryContent > img{
+  width: 100%;
+}
+.categoryContent > label{
+  line-height: 35px;
+  color: $main_color;
+  font-size: 14px;
+  font-weight: 400;
+}
+.categoryContent section{
+
+}
