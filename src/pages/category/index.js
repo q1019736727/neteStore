@@ -26,7 +26,7 @@ class CateGory extends Component{
   }
   render() {
     return (
-      <div className='categoryWrapper'>
+      <div className='categoryWrapper clearfix'>
         <CategoryList categoryList={this.state.categoryList}/>
         <CategoryContent currentCategory={this.state.currentCategory}/>
       </div>

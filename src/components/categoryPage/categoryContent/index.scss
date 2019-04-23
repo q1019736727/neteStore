@@ -5,6 +5,7 @@
   justify-content: start;
   align-items: center;
   flex-direction: column;
+  float: right;
 }
 .categoryContent > img{
   width: 100%;
@@ -16,5 +17,14 @@
   font-weight: 400;
 }
 .categoryContent section{
-
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.categoryContent section > .categoryContent-item{
+  width: 50%;
+  height: 100px;
+  background: #000;
 }

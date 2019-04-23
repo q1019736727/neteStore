@@ -1,1 +1,6 @@
 $main_color: #b22d30;
+.clearfix::after{
+  clear: both;
+  display: block;
+  content: '';
+}
