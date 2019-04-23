@@ -1,6 +1,5 @@
 .pageWrapper{
-  height: calc(100vh - 50px);
-  height: -webkit-calc(100vh - 50px);
+  padding-bottom: 50px;
   background: white;
   overflow: auto;
   -webkit-overflow-scrolling: touch;

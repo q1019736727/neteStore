@@ -22,12 +22,25 @@ class CateGory extends Component{
         categoryList:[...response.data.categoryList],
         currentCategory:{...response.data.currentCategory}
       })
+    }).catch(error=>{
+      Dialog.dismiss()
+    })
+  }
+  changeCategory = (id) => {
+    Dialog.show()
+    http.categoryCurrentData({id}).then(response =>{
+      Dialog.dismiss()
+      this.setState({
+        currentCategory:{...response.data.currentCategory}
+      })
+    }).catch(error=>{
+      Dialog.dismiss()
     })
   }
   render() {
     return (
       <div className='categoryWrapper clearfix'>
-        <CategoryList categoryList={this.state.categoryList}/>
+        <CategoryList listClick={(id)=>{this.changeCategory(id)}} categoryList={this.state.categoryList}/>
         <CategoryContent currentCategory={this.state.currentCategory}/>
       </div>
     );

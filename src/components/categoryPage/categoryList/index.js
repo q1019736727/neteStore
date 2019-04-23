@@ -5,13 +5,20 @@ class CategoryList extends Component{
   constructor(){
     super()
     this.myRef = React.createRef()
+    this.state = {
+      currentIndex: 0,
+    }
   }
-  cateClick(ele){
+  cateClick(ele,id,index){
     let line = document.getElementById('categoryLine')
     line.style.transform = `translateY(${ele.currentTarget.getBoundingClientRect().top-12}px)`
-    line.style.animation = '0.1ms liner all'
+    this.props.listClick(id)
+    this.setState({
+      currentIndex:index
+    })
   }
   render() {
+    const {currentIndex} = this.state
     return (
       <div className='categoryListWraper'>
         <ul>
@@ -19,7 +26,9 @@ class CategoryList extends Component{
           {
             this.props.categoryList.map((item,index)=>{
               return(
-                <li onClick={this.cateClick}  key={item.id}>{item.name}</li>
+                <li className={currentIndex === index ? 'active':''}
+                    onClick={(ele)=>{this.cateClick(ele,item.id,index)}}
+                    key={item.id}>{item.name}</li>
               )
             })
           }

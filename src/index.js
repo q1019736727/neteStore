@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './pages/App';
-import './common/reset.scss'
 import * as serviceWorker from './serviceWorker';
 import 'antd-mobile/dist/antd-mobile.css'//ant样式
+import './common/reset.scss'
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

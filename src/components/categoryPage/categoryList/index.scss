@@ -1,3 +1,4 @@
+@import "../../../common/theme";
 .categoryListWraper{
   height: calc(100vh - 50px);
   border-right: 1px solid #f2f2f6;
@@ -8,7 +9,7 @@
 }
 .categoryListWraper ul #categoryLine{
   width: 2px;
-  background: #b22d30;
+  background: $main_color;
   height: 40px;
   position: absolute;
   left: 0;
@@ -21,4 +22,7 @@
   text-align: center;
   padding: 15px 0;
   font-size: 14px;
+}
+.categoryListWraper ul li.active{
+  color: $main_color;
 }

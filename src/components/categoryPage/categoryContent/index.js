@@ -2,7 +2,6 @@ import React,{Component} from 'react'
 import './index.scss'
 class CateGoryContent extends Component{
   render() {
-    console.log(this.props)
     const {banner_url,name,subCategoryList} = this.props.currentCategory
     let catelist = subCategoryList || []
     return (
@@ -12,7 +11,7 @@ class CateGoryContent extends Component{
         <section>
           {
             catelist.map(item=>(
-              <Item key={item.id}/>
+              <Item {...item} key={item.id}/>
             ))
           }
         </section>
@@ -20,10 +19,12 @@ class CateGoryContent extends Component{
     );
   }
 }
-function Item() {
+function Item(props) {
+  const {wap_banner_url,name} = props
   return(
     <div className='categoryContent-item'>
-
+      <img src={wap_banner_url} alt=""/>
+      <label>{name}</label>
     </div>
   )
 }

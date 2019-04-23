@@ -46,6 +46,9 @@ const http = {
   },
   categoryListData:function (params) {
     return request.get(params,api.categoryListUrl)
+  },
+  categoryCurrentData:function(params) {
+    return request.get(params,api.categoryCurrent)
   }
 }
 export default http
