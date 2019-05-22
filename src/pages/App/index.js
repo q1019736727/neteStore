@@ -11,6 +11,7 @@ import Category from '../category'
 import Cart from '../cart'
 import Mine from '../mine'
 import GoodsDetail from '../goodsDetail'
+import CateList from '../catelist'
 class App extends Component {
   render() {
     let {isLogin} = userInfo
@@ -29,6 +30,7 @@ class App extends Component {
                   <Route path='/category' component={Category}></Route>
                   <Route path='/cart' component={Cart}></Route>
                   <Route path='/mine' component={Mine}></Route>
+                  <Route path='/catelist' component={CateList}></Route>
                 </Switch>
                 <Route component={Tabber}></Route>
               </Fragment>

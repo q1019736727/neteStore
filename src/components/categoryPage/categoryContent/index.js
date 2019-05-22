@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import {withRouter} from 'react-router-dom'
 import './index.scss'
 class CateGoryContent extends Component{
   render() {
@@ -11,21 +12,27 @@ class CateGoryContent extends Component{
         <section>
           {
             catelist.map(item=>(
-              <Item {...item} key={item.id}/>
+              <Item clickItem={()=>{this.gocateList()}} {...item} key={item.id}/>
             ))
           }
         </section>
       </div>
     );
   }
+  gocateList(){
+    console.log(this.props.history)
+    this.props.history.push({
+      pathname:'/catelist'
+    })
+  }
 }
 function Item(props) {
-  const {wap_banner_url,name} = props
+  const {wap_banner_url,name,clickItem} = props
   return(
-    <div className='categoryContent-item'>
+    <div onClick={clickItem} className='categoryContent-item'>
       <img src={wap_banner_url} alt=""/>
       <label>{name}</label>
     </div>
   )
 }
-export default CateGoryContent
+export default withRouter(CateGoryContent)
