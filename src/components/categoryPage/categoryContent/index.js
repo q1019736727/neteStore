@@ -20,9 +20,11 @@ class CateGoryContent extends Component{
     );
   }
   gocateList(){
-    console.log(this.props.history)
+    const {subCategoryList} = this.props.currentCategory
+    let catelist = subCategoryList || []
     this.props.history.push({
-      pathname:'/catelist'
+      pathname:'/catelist',
+      catelist:catelist
     })
   }
 }
